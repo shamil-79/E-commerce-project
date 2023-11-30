@@ -1,0 +1,16 @@
+.link-color{
+    text-decoration: none;
+  }
+  
+  /* Change link color to black */
+  a {
+    color: black;
+  }
+  
+  /* Style links inside a specific container */
+  .container-class a {
+    /* Remove underline */
+    text-decoration: none;
+    /* Change color */
+    color: black;
+  }
