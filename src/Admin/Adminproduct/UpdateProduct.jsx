@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container, Image } from 'react-bootstrap';
 import { Mycart } from '../../MainRoter';
-import { useParams } from 'react-router-dom';
+import { useParams,useNavigate } from 'react-router-dom';
 import { items } from '../../components/productes/Products';
 
 
@@ -11,6 +11,7 @@ import { items } from '../../components/productes/Products';
 const UpdateProduct = () => {
     const {item,setItem}=useContext(Mycart)
     const {id}=useParams()
+    const nav=useNavigate()
     const filteritem=item.find((item)=>item.id===parseInt(id))
     const [updatedval,setUpdatedVal]=useState({
         id:filteritem.id,
@@ -27,6 +28,8 @@ const UpdateProduct = () => {
     const click=()=>{
         const update=item.map((item)=>item.id===filteritem.id?{...updatedval,id:filteritem.id}:item)
         setItem(update)
+        alert("item updated")
+        nav("/admin/allproduct")
     }
     console.log(items)
 
